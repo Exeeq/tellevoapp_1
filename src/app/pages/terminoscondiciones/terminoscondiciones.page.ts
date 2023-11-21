@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-terminoscondiciones',
@@ -8,7 +9,15 @@ import { Route, Router } from '@angular/router';
 })
 export class TerminoscondicionesPage implements OnInit {
 
-  constructor(private router: Router) { }
+  langs: string[] = [];
+  idioma!: any;
+
+  constructor(
+    private router: Router,
+    private transService: TranslateService
+    ) { 
+      this.langs = this.transService.getLangs();
+    }
 
   ngOnInit() {
   }
@@ -17,4 +26,7 @@ export class TerminoscondicionesPage implements OnInit {
     this.router.navigate(['login']);
   }
 
+  changeLangs(event:any){
+    this.transService.use(event.detail.value);
+  }
 }

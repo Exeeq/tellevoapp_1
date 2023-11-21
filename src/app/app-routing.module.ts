@@ -132,14 +132,12 @@ const routes: Routes = [
   {
     path: 'tussolicitudes',
     loadChildren: () => import('./pages/tussolicitudes/tussolicitudes.module').then( m => m.TussolicitudesPageModule)
+  },  {
+    path: 'musicalista',
+    loadChildren: () => import('./pages/musicalista/musicalista.module').then( m => m.MusicalistaPageModule)
   },
-  {
-    path: 'qr-conductor/:solicitudId',
-    loadChildren: () =>
-      import('./pages/qr-conductor/qr-conductor.module').then(
-        (m) => m.QrConductorPageModule
-      ),
-  },
+
+
 
 
 

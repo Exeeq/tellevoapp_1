@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SolicitudesService } from 'src/app/services/firebase/solicitudes.service';
 import { QrService } from 'src/app/services/qr.service';
 import { SolicitudViaje } from 'src/app/interfaces/isolicitudviajes';
@@ -36,6 +36,10 @@ import { UsuarioActualService } from 'src/app/services/usuario-actual.service';
             GUARDA ESTE CÓDIGO. MUESTRA EL QR AL CONDUCTOR PARA VALIDAR EL VIAJE.
           </p>
         </ion-card-content>
+
+        <ion-button class="ion-text-center" (click)="irMapa()">
+          IR AL MAPA
+        </ion-button>
       </ion-card>
 
     </ion-content>
@@ -55,14 +59,14 @@ export class QrPage implements OnInit {
     private qrService: QrService,
     private solicitudService: SolicitudesService,
     private usuarioActual: UsuarioActualService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit() {
     this.user = this.usuarioActual.getCurrentUser();
     console.log('Usuario:', this.user);
 
-    // Accede a los parámetros de la ruta correctamente
     this.route.params.subscribe(params => {
       this.idSolicitud = params['idSolicitud'];
       this.lugarEspera = params['lugarEspera'];
@@ -73,7 +77,6 @@ export class QrPage implements OnInit {
       console.log('Lugar Espera:', this.lugarEspera);
       console.log('Lugar Destino:', this.lugarDestino);
 
-      // Llama a la función con los valores correctos
       this.generarCodigoQRParaSolicitud(this.idSolicitud, this.user.uid, this.lugarEspera, this.lugarDestino);
     });
   }
@@ -103,5 +106,12 @@ export class QrPage implements OnInit {
         this.solicitud = solicitud;
       }
     });
+  }
+
+  irMapa() {
+    this.router.navigate(['mapa', {
+      lugarEspera: this.lugarEspera,
+      lugarDestino: this.lugarDestino
+    }]);
   }
 }

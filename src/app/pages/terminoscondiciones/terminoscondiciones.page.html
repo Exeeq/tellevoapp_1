@@ -5,6 +5,12 @@
 </ion-header>
 
 <ion-content>
+  <ion-item>
+    <ion-label>{{ "SELECCIONA" | translate }}</ion-label>
+    <ion-select [(ngModel)]="idioma" (ionChange)="changeLangs($event)">
+      <ion-select-option *ngFor="let lang of langs">{{lang}}</ion-select-option>
+    </ion-select>
+  </ion-item>
   <ion-card>
     <ion-card-header>
       <ion-card-subtitle> {{ "ULTIMAACTUALIZACION" | translate }} </ion-card-subtitle>

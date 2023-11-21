@@ -22,6 +22,9 @@
   
     <ion-card-content class="ion-text-center">
       {{ "DEDICADA" | translate }}
+      <ion-button routerLink="/musicalista">
+        <ion-icon name="musical-notes-outline"></ion-icon>
+      </ion-button>
     </ion-card-content>
   </ion-card>
   
@@ -36,6 +39,17 @@
       </div>
     </ion-card-content>
   </ion-card>
+  <ion-card-content *ngIf="weatherData" class="weather-container">
+    <div class="weather-info">
+      <h1>Estado del tiempo en {{ weatherData.name }}</h1>
+      <p>{{ weatherData.weather[0].description }}</p>
+      <p>Temperatura: {{ weatherData.main.temp }}°C</p>
+      <h2>Recomendaciones:</h2>
+      <ul>
+        <li *ngFor="let recommendation of recommendations">{{ recommendation }}</li>
+      </ul>
+    </div>
+  </ion-card-content>
   <ion-card>
     <ion-card-header>
       <ion-card-title class="centrado2  ">{{ "TUTORIAL" | translate }}</ion-card-title>

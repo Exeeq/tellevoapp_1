@@ -1,18 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+
 import { IonicModule } from '@ionic/angular';
 
-import { QrConductorPage } from './qr-conductor.page';
+import { MusicalistaPageRoutingModule } from './musicalista-routing.module';
+
+import { MusicalistaPage } from './musicalista.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    MusicalistaPageRoutingModule
   ],
-  declarations: [
-    QrConductorPage,
-  ],
+  declarations: [MusicalistaPage]
 })
-export class QrConductorPageModule {}
+export class MusicalistaPageModule {}

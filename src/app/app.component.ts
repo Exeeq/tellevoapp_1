@@ -33,8 +33,8 @@ export class AppComponent {
   constructor(private router: Router, private menuController: MenuController,
               private transService: TranslateService,
               private usuarioActual: UsuarioActualService) {
-                this.transService.setDefaultLang('cor');
-                this.transService.addLangs(['es','en']);
+                this.transService.setDefaultLang('es');
+                this.transService.addLangs(['cor','en']);
               }
   
   ngOnInit() {

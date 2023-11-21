@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>musicalista</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar [(ngModel)]="searchQuery" (ionChange)="searchSongs()"></ion-searchbar>
+
+  <ion-button *ngFor="let song of songs" (click)="selectSong(song)">
+    {{ song.name }} - {{ song.artist }}
+  </ion-button>
+  
+  <div *ngIf="selectedSong">
+    <h2>{{ selectedSong.name }}</h2>
+    <p>{{ selectedSong.artist }}</p>
+    <!-- Otros detalles de la canción -->
+  </div>
+</ion-content>
+
