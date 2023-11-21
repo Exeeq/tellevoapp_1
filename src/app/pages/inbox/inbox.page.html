@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="mensajes" size="large"></ion-back-button>
+    </ion-buttons>
+    <ion-avatar slot="start">
+      <img src="../../../assets/tulio japía.png" alt="" class="profile-image" />
+    </ion-avatar>
+    <ion-title class="ion-text-center" slot="start">
+      <h2 class="texto1">Tulio Japia</h2>
+    </ion-title>
+    <ion-buttons slot="end">
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="message-container">
+    <div class="message user">
+      <!-- Mensajes del usuario actual -->
+      <div class="message-content user-message">
+        {{ "MENSAJE1" | translate }}
+      </div>
+    </div>
+  
+    <div class="message">
+      <!-- Mensajes del otro usuario -->
+      <div class="message-content other-user-message">
+        {{ "MENSAJE2" | translate }}
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-item class="message-input">
+      <ion-input #mensaje type="text" placeholder="Mensaje" labelPosition="stacked"></ion-input>
+      <ion-buttons>
+        <ion-button><ion-icon color="secondary" size="medium" name="send-outline"></ion-icon></ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-toolbar>
+</ion-footer>

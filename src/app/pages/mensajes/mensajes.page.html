@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center centrado2">
+      DIGIMON
+    </ion-title>
+    <ion-icon slot="end" name="information-circle-outline" size="large"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-list>
+    <ion-item *ngFor="let aux of digimones" [routerLink]="'/detalleapi/'+aux.id">
+      <ion-avatar slot="start">
+        <img src="{{ aux.image }}" alt="">
+      </ion-avatar>
+      <ion-label>{{ aux.name }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <br>
+
+  <div class="ion-text-center">
+    <ion-button (click)="volverAnterior()" class="ion-text-center">{{ "MOSTRARMENOS" | translate }}</ion-button>
+    <ion-button (click)="cargarSiguientePage()" class="ion-text-center">{{ "MOSTRARMAS" | translate }}</ion-button>
+    <ion-button (click)="cargarMas()" class="ion-text-center">{{ "CARGARMAS" | translate }}</ion-button>
+  </div>
+</ion-content>
+
+
+
+

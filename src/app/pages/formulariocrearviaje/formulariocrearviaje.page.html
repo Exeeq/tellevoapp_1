@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center centrado2">
+      {{ "FORMULARIO" | translate }}
+    </ion-title>
+    <ion-icon slot="end" name="information-circle-outline" size="large"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">{{ "CREACIONVIAJE" | translate }}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-item>
+        <ion-input [(ngModel)]="viaje.imagen" name="imagen" type="text" label="Imagen conductor" labelPlacement="stacked" placeholder="Ingrese link imagen"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="viaje.lugarespera" name="lugar" type="text" label="Lugar de espera" labelPlacement="stacked" placeholder="Ingrese lugar de espera"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="viaje.lugardestino" name="lugar" type="text" label="Lugar de destino" labelPlacement="stacked" placeholder="Ingrese lugar de destino"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="viaje.patente" name="patente" type="text" label="Patente" labelPlacement="stacked" placeholder="Ingrese patente"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="viaje.vehiculo" name="vehiculo" type="text" label="Vehículo" labelPlacement="stacked" placeholder="Ingrese vehículo"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="viaje.capacidad" name="capacidad" type="number" min="1" label="Capacidad de pasajeros" labelPlacement="stacked" placeholder="Ingrese cantidad"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="viaje.fecha" name="fecha" type="date" label="Fecha" labelPlacement="stacked"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="viaje.hora" name="hora" type="time" label="Hora" labelPlacement="stacked"></ion-input>
+      </ion-item>
+      <div class="botones-centrados">
+        <ion-button color="primary" (click)="addViaje()" fill="clear">{{ "CREA" | translate }}</ion-button>
+        <ion-button (click)="cancelar()" color="danger" fill="clear">{{ "CANCELAR" | translate }}</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

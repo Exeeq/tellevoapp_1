@@ -1,0 +1,38 @@
+/* Estilos generales para la página de detalle */
+.page-detail {
+    .header {
+      background-color: #3498db; /* Cambia el color de fondo del encabezado según tu preferencia */
+      color: white; /* Cambia el color del texto según tu preferencia */
+    }
+  
+    .content {
+      padding: 10px;
+    }
+  
+    .card {
+      border-radius: 10px; /* Bordes redondeados para la tarjeta */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera para la tarjeta */
+    }
+  
+    .image {
+      max-height: 300px; /* Altura máxima para la imagen */
+      object-fit: cover; /* Ajustar imagen dentro del contenedor */
+    }
+  
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f1f1f1; /* Cambia el color de fondo del pie de página según tu preferencia */
+      padding: 10px;
+    }
+  
+    .button {
+      --color: #e74c3c; /* Cambia el color de los botones según tu preferencia */
+    }
+  }
+  
+  .custom-button {
+    display: inline;
+    margin-right: 10px; /* Espacio entre los botones, ajusta según tus necesidades */
+  }

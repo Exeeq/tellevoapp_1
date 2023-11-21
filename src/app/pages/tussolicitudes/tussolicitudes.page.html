@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>{{"SOLICITUDVIAJE" | translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list *ngIf="solicitudes.length > 0">
+    <ion-item *ngFor="let solicitud of solicitudes">
+      <ion-label>{{ solicitud.nombreusuario }}</ion-label>
+      <ion-button (click)="aceptarSolicitud(solicitud.id)">{{"ACEPTAR" | translate}}</ion-button>
+      <ion-button (click)="rechazarSolicitud(solicitud.id)">{{"RECHAZAR" | translate}}</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <div *ngIf="solicitudes.length === 0" class="ion-text-center">
+    {{"NOSOLICITUD" | translate}}
+  </div>
+</ion-content>
+

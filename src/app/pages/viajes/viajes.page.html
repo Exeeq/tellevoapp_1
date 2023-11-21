@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center centrado2">
+      {{ "VIAJES" | translate }}
+    </ion-title>
+    <!-- Agrega un enlace de navegación al ícono de información -->
+    <ion-buttons slot="end" *ngIf="user.esConductor === true">
+      <ion-button [routerLink]="['/tussolicitudes']">
+        <ion-icon name="information-circle-outline" size="large"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list *ngIf="!!listaViajes && listaViajes.length > 0">
+    <ion-item *ngFor="let aux of listaViajes" [routerLink]="['/viajes/', aux.id]">
+      <ion-avatar slot="start">
+        <ion-img [src]="aux.imagen"></ion-img>
+      </ion-avatar>
+      <ion-label>{{ aux.conductor }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <div *ngIf="!!listaViajes && listaViajes.length === 0" class="ion-text-center">
+    {{ "NOHAYVIAJES" | translate }}
+  </div>
+
+  <!-- ÍCONO QUE REDIRIGE AL FORMULARIO DE CREACIÓN DE UN VIAJE -->
+  <ion-fab vertical="bottom" (click)="irFormularioAdd()" horizontal="end" slot="fixed" *ngIf="user.esConductor">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+

@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/viajes"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center centrado2">
+      DETALLE
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button *ngIf="user.esConductor === true" (click)="editarViaje()">
+        <ion-icon name="create-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+      <ion-button *ngIf="user.esConductor === true" (click)="deleteViaje()">
+        <ion-icon name="trash-bin-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card *ngIf="viajes" class="detalle-card">
+    <ion-card-header color="light" class="centrado2">
+      <ion-card-title style="font-weight: bold;">{{ viajes.conductor }}</ion-card-title>
+    </ion-card-header>
+    <div class="centrar-foto">
+      <ion-avatar>
+        <img src="{{ viajes.imagen }}" alt="Imagen del Viaje">
+      </ion-avatar>
+    </div>
+    <app-card lugarespera="{{ viajes.lugarespera }}" lugardestino="{{ viajes.lugardestino }}" patente="{{ viajes.patente }}" vehiculo="{{ viajes.vehiculo }}" capacidad="{{ viajes.capacidad }}" fecha="{{ viajes.fecha }}" hora="{{ viajes.hora }}"></app-card>
+    <ion-footer class="detalle-footer">
+      <ion-button *ngIf="user.esConductor === false" [disabled]="solicitudPendiente || solicitudEnviada" (click)="tomarViaje()" expand="full" fill="clear" class="minimal-button">Tomar Viaje</ion-button>
+    </ion-footer>
+  </ion-card>
+  <br>
+  <ion-card *ngIf="solicitudes.length > 0">
+    <ion-card-header color="light" class="centrado2">
+      <ion-card-title style="font-weight: bold;">Solicitudes Aceptadas</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <!-- Agrega un mensaje de depuración -->
+        <div *ngIf="solicitudes.length > 0; else noSolicitudes">
+          <ion-item *ngFor="let solicitud of solicitudes">
+            Conductor {{ solicitud.nombreconductor }} aceptó la solicitud.
+          </ion-item>
+        </div>
+        <ng-template #noSolicitudes>
+          <p>No hay solicitudes aceptadas</p>
+        </ng-template>
+      </ion-list>
+    </ion-card-content>
+    <ion-footer class="detalle-footer">
+      <ion-button *ngIf="user.esConductor === false" (click)="irAlQR()" expand="full" fill="clear" class="minimal-button">IR AL QR</ion-button>
+    </ion-footer>
+    
+  </ion-card>
+  
+</ion-content>

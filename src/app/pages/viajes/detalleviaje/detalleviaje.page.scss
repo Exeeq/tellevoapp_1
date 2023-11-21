@@ -1,0 +1,27 @@
+.detalle-card {
+    border-radius: 12px;
+  }
+  
+  .detalle-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .minimal-button {
+    border-radius: 999px;
+    background-color: #FFD700;
+    margin-top: 10px;
+    color: black;
+    font-weight: bold;
+    width: 80%;
+  }
+  
+  .minimal-button:hover {
+    background-color: #FFD700;
+  }
+
+  .no-interact {
+    pointer-events: none;
+  }
+  

@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center centrado2">
+      {{ "PERFIL" | translate }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<br><br><br><br>
+
+<ion-content class="profile-container">
+  <ion-card class="profile-card">
+    <ion-card-header class="profile-card-header">
+      <ion-card-title class="profile-card-title ion-text-center">{{ "INFOPERSONAL" | translate }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content class="profile-card-content">
+      <div class="profile-item">
+        <ion-label class="profile-label">{{ "CORREO" | translate }}: </ion-label>
+        <ion-text class="profile-text">{{ user.email }}</ion-text>
+      </div>
+
+      <div class="profile-item">
+        <ion-label class="profile-label">{{ "NOMBRE" | translate }}: </ion-label>
+        <ion-text class="profile-text">{{ user.nombre }}</ion-text>
+      </div>
+
+      <div class="profile-item">
+        <ion-label class="profile-label">{{ "EDAD" | translate }}: </ion-label>
+        <ion-text class="profile-text">{{ user.edad }}</ion-text>
+      </div>
+
+      <div class="profile-item">
+        <ion-label class="profile-label">{{ "ESCONDUCTOR" | translate }}: </ion-label>
+        <ion-text class="profile-text">{{ user.esConductor ? 'Sí' : 'No' }}</ion-text>
+      </div>
+    </ion-card-content>
+
+    <ion-button class="profile-logout-button" (click)="logout()">{{ "CERRARSESION" | translate }}</ion-button>
+  </ion-card>
+</ion-content>

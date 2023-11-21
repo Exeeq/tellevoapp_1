@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center centrado2">
+      DETALLE
+    </ion-title>
+    <ion-icon slot="end" name="information-circle-outline" size="large"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="digimon">
+    <ion-card-header>
+      <ion-chip *ngFor="let aux of digimon.images">
+        <img src="{{aux.href}}" alt="">
+      </ion-chip>
+      <ion-card-title>{{digimon.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <h4>Skills:</h4>
+      <ion-chip *ngFor="let aux of digimon.skills">
+        {{aux.skill}}
+      </ion-chip>
+      <p *ngFor="let aux of digimon.descriptions">
+        {{aux.description}}
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

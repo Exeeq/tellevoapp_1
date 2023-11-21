@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center centrado2">
+      {{"DETALLE" | translate}}
+    </ion-title>
+    <ion-icon slot="end" name="information-circle-outline" size="large"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <app-card2 nombre="{{ direccion.nombre }}" comuna="{{ direccion.comuna }}" calle="{{ direccion.calle }}" detalle="{{ direccion.detalle }}"></app-card2>
+  <ion-footer>
+    <ion-button (click)="deleteDireccion()" expand="full" fill="clear" color="danger">
+      <ion-icon slot="icon-only" name="trash-bin-outline"></ion-icon>
+    </ion-button>
+  </ion-footer>
+</ion-content>

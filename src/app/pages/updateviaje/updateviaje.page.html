@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center centrado2">
+      {{ "MODIFICAR" | translate }}
+    </ion-title>
+    <ion-icon slot="end" name="information-circle-outline" size="large"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="formulario-card" *ngIf="viajes">
+    <ion-card-header class="ion-text-center">
+      <ion-card-title>{{ "MODIFICARVIAJE" | translate }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-label position="floating" class="animated-label">{{ "IMAGENCONDUCTOR" | translate }}</ion-label>
+        <ion-input [(ngModel)]="viajes.imagen" type="text"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label position="floating" class="animated-label">{{ "LUGARESPERA" | translate }}</ion-label>
+        <ion-input [(ngModel)]="viajes.lugarespera" type="text"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label position="floating" class="animated-label">{{ "LUGARDESTINO" | translate }}</ion-label>
+        <ion-input [(ngModel)]="viajes.lugardestino" type="text"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label position="floating" class="animated-label">{{ "PATENTE" | translate }}</ion-label>
+        <ion-input [(ngModel)]="viajes.patente" type="text"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label position="floating" class="animated-label">{{ "VEHICULO" | translate }}</ion-label>
+        <ion-input [(ngModel)]="viajes.vehiculo" type="text"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label position="floating" class="animated-label">{{ "CAPACIDAD" | translate }}</ion-label>
+        <ion-input [(ngModel)]="viajes.capacidad" type="number"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label position="floating" class="animated-label">{{ "FECHA" | translate }}</ion-label>
+        <ion-input [(ngModel)]="viajes.fecha" type="date"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label position="floating" class="animated-label">{{ "HORA" | translate }}</ion-label>
+        <ion-input [(ngModel)]="viajes.hora" type="time"></ion-input>
+      </ion-item>
+    </ion-card-content>
+    <ion-button expand="full" (click)="updateViaje()" class="boton-animated">{{ "MODIFICARVIAJE" | translate }}</ion-button>
+  </ion-card>
+</ion-content>

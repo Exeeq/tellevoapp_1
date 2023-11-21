@@ -1,0 +1,57 @@
+/* Estilo para el formulario */
+.formulario-card {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilo para las etiquetas animadas */
+  .animated-label {
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+    transform-origin: left top;
+  }
+  
+  /* Estilo para los inputs */
+  ion-input {
+    font-size: 16px;
+  }
+  
+  /* Estilo para el botón */
+  .boton-animated {
+    margin-top: 20px;
+    --background: #ffcc00; /* Color de fondo del botón */
+    --color: #333; /* Color del texto del botón */
+    border-radius: 10px;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+  
+  /* Efecto de hover en el botón */
+  .boton-animated:hover {
+    --background: #ffdb4d; /* Color de fondo al pasar el mouse */
+    --color: #222; /* Color del texto al pasar el mouse */
+  }
+  
+
+  /* Estilo para el ion-refresher */
+ion-refresher {
+  --background: transparent; /* Fondo transparente */
+}
+
+/* Estilo para el icono de recarga */
+ion-refresher ion-refresher-content ion-spinner {
+  --color: var(--ion-color-primary); /* Color del spinner (por ejemplo, el color primario de tu aplicación) */
+}
+
+/* Estilo para el texto de recarga */
+ion-refresher ion-refresher-content .refresher-pulling {
+  color: var(--ion-text-color); /* Color del texto al tirar hacia abajo */
+  font-size: 14px; /* Tamaño de fuente del texto */
+}
+
+/* Estilo para el texto mientras se refresca */
+ion-refresher ion-refresher-content .refresher-refreshing {
+  color: var(--ion-color-primary); /* Color del texto mientras se está refrescando */
+  font-size: 14px; /* Tamaño de fuente del texto */
+}

@@ -1,0 +1,156 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> {{ "POLITICADEPRIVACIDAD" | translate }} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle> {{ "ULTIMAACTUALIZACION" | translate }} </ion-card-subtitle>
+    </ion-card-header>
+    
+    <ion-card-content>
+      <p>{{ "PARRAFO1" | translate }}</p>
+      <p>{{ "PARRAFO2" | translate }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ "INTERPRETACION" | translate }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-card-subtitle>{{ "INTERPRETACION" | translate }}</ion-card-subtitle>
+      <p>{{ "PARRAFO1INT" | translate }}</p>
+
+      <ion-card-subtitle>{{ "DEFINICIONES" | translate }}</ion-card-subtitle>
+      <p>{{ "FINESDEPOLITICA" | translate }}</p>
+      
+      <ion-list lines="none">
+        <ion-item>
+          <ion-label><strong>{{ "CUENTA" | translate }}</strong></ion-label>
+          <ion-text>{{ "PARRAFOCUENTA" | translate }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label><strong>{{ "AFILIADO" | translate }}</strong></ion-label>
+          <ion-text>{{ "PARRAFOAFILIADO" | translate }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label><strong>{{ "APLICACION" | translate }}</strong></ion-label>
+          <ion-text>{{ "PARRAFOAPLICACION" | translate }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label><strong>{{ "COMPAÑIA" | translate }}</strong></ion-label>
+          <ion-text>{{ "PARRAFOCOMPAÑIA" | translate }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label><strong>{{ "PAIS" | translate }}</strong></ion-label>
+          <ion-text>{{ "PARRAFOPAIS" | translate }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label><strong>{{ "DISPOSITIVO" | translate }}</strong></ion-label>
+          <ion-text>{{ "PARRAFODISPOSITIVO" | translate }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label><strong>{{ "DATOSPERSONALES" | translate }}</strong></ion-label>
+          <ion-text>{{ "PARRAFOPERSONAL" | translate }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label><strong>{{ "SERVICIO" | translate }}</strong></ion-label>
+          <ion-text>{{ "PARRAFOSERVICIO" | translate }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label><strong>{{ "PROOVEDOR" | translate }}</strong></ion-label>
+          <ion-text>{{ "PARRAFOPROOVEDOR" | translate }}.</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label><strong>{{ "DATOSDEUSO" | translate }}</strong></ion-label>
+          <ion-text>{{ "PARRAFOUSO" | translate }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label><strong>{{ "USTED" | translate }}</strong></ion-label>
+          <ion-text>{{ "PARRAFOUSTED" | translate }}</ion-text>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ "RECOPILACIONDEDATOS" | translate }}</ion-card-title>
+    </ion-card-header>
+    
+    <ion-card-content>
+      <ion-card-title>{{ "TIPODEDATOS" | translate }}s</ion-card-title>
+      <ion-card-subtitle>{{ "DATOSPERSONALES" | translate }}</ion-card-subtitle>
+      <p>{{ "PARRAFODATOS" | translate }}</p>
+      
+      <ion-list lines="none">
+        <ion-item>
+          <ion-label>{{ "CORREO" | translate }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>{{ "NOMBREYAPELLIDO" | translate }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>{{ "TELEFONO" | translate }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>{{ "DATOSDEUSO" | translate }}</ion-label>
+        </ion-item>
+      </ion-list>
+      
+      <ion-card-subtitle>{{ "DATOSDEUSO" | translate }}</ion-card-subtitle>
+      <p>{{ "DATOS1" | translate }}</p>
+      <p>{{ "DATOS2" | translate }}</p>
+      <p>{{ "DATOS3" | translate }}</p>
+      <p>{{ "DATOS4" | translate }}</p>
+      
+      
+      <ion-card-subtitle><p>{{ "ALUSARLAAPP" | translate }}</p></ion-card-subtitle>
+      <p>{{ "LAAPP1" | translate }}</p>
+      
+      <ion-list lines="none">
+        <ion-item>
+          <ion-label>{{ "INFORMACIONUBICACION" | translate }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>{{ "CAMARA" | translate }}</ion-label>
+        </ion-item>
+      </ion-list>
+      
+      <p>{{ "UTILIZAMOS" | translate }}</p>
+      <p>{{ "HABILITAR" | translate }}</p>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ "ELIMINARDATOS" | translate }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>{{ "ELIMINAR1" | translate }}</p>
+      <p>{{ "ELIMINAR2" | translate }}</p>
+      <p>{{ "ELIMINAR3" | translate }}</p>
+      <p>{{ "ELIMINAR4" | translate }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>{{ "ACEPTOTERMINOS" | translate }}</ion-label>
+        <ion-toggle #toggleTerms [enableOnOffLabels]="true"></ion-toggle>
+      </ion-item>
+      <br>
+      <ion-card-content>
+        <ion-button (click)="redirigir()" expand="full" color="primary" [disabled]="!toggleTerms.checked">{{ "CONTINUAR" | translate }}</ion-button>
+      </ion-card-content>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

@@ -1,0 +1,237 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import '@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+
+.centrado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    scale: 3;
+}
+
+
+.centrado2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-weight: bold; /* Fuente en negrita */
+    
+  }
+
+
+/* Cambiar el fondo y el color del texto del encabezado */
+.colorpersonalizado {
+    background-color: rgb(255, 255, 255); /* Fondo blanco */
+}
+  
+/* Cambiar el color del título del encabezado */
+.bgcolor {
+    background-color: rgb(1, 0, 77); /* Texto en color negro */
+}
+
+/* Agrega estilos para el icono */
+.icono {
+    font-size: 24px; /* Tamaño del icono */
+    margin-right: 8px; /* Espacio a la derecha del icono */
+    vertical-align: middle; /* Alinear verticalmente con el texto */
+}
+
+.botones-centrados {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Puedes ajustar el margen superior según tus necesidades */
+}
+
+.mensajeabajo {
+    margin-top: 167%;
+}
+
+.fondo1 {
+    background-color: rgb(68, 127, 175);
+    margin-top: 10;
+}
+
+.texto1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    color: rgb(8, 8, 8);
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.profile-image {
+    max-width: 50px; /* Ajusta el tamaño máximo según tus preferencias */
+    max-height: 50px; /* Ajusta el tamaño máximo según tus preferencias */
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.message {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
+  
+  .message.user {
+    justify-content: flex-end;
+  }
+  
+  .message-content {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #3f66a0; /* Color de fondo del mensaje */
+    max-width: 70%;
+    word-wrap: break-word;
+  }
+  
+  /* Estilos para el campo de entrada de mensajes */
+  .message-input ion-input {
+    border-radius: 30px;
+    padding: 10px;
+  }
+
+  /* Estilo de las cartas de viaje */
+.viaje-card {
+    border: 1px solid #ccc; /* Borde delgados */
+    border-radius: 8px; /* Esquinas redondeadas */
+    margin: 10px; /* Margen entre las cartas */
+    padding: 10px; /* Espaciado interno */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  }
+  
+  /* Estilo para la imagen del avatar */
+  .viaje-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+  }
+  
+  /* Estilo para la información del viaje */
+  .viaje-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 10px; /* Espaciado a la izquierda */
+  }
+  
+  /* Estilo para el nombre del viaje */
+  .viaje-nombre {
+    font-size: 1.2rem; /* Tamaño de fuente más grande */
+    font-weight: bold; /* Texto en negrita */
+    margin-bottom: 5px; /* Margen inferior pequeño */
+  }
+  
+  /* Estilo para los elementos de la lista */
+  .viaje-list-item {
+    padding-left: 0; /* Eliminar el espacio izquierdo predeterminado */
+    margin-bottom: 5px; /* Margen inferior pequeño */
+  }
+  
+  /* Estilo para las etiquetas de la lista */
+  .viaje-list-label {
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+    font-weight: normal; /* Texto normal (no en negrita) */
+  }
+
+  /* Estilo de las cartas de viaje */
+.viaje-card {
+    background: linear-gradient(180deg, #007bff 0%, #007bff 50%, #007bff 50%, #007bff 100%);
+    background-size: 200% 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-position 0.3s ease;
+  }
+  
+  /* Pseudoclase para el efecto de hover */
+  .viaje-card:hover {
+    background-position: -100% 0;
+  }
+
+  .centrar-foto {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    height: 20; /* Ajustar el alto al 100% del viewport */
+  }
+  
+  .centrar-foto img {
+    max-width: 100%; /* Ajustar el ancho de la imagen al contenedor */
+    max-height: 100%; /* Ajustar el alto de la imagen al contenedor */
+  }
+
+  /* Estilo para la tarjeta de dirección */
+  .address-card {
+    margin: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilo para el encabezado de la tarjeta de dirección */
+  .address-header {
+    text-align: center;
+    padding: 16px;
+  }
+  
+  /* Estilo para el título de la dirección */
+  .address-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Estilo para los íconos en los ítems */
+  .address-icon {
+    font-size: 20px;
+    color: #007bff; /* Cambia el color si lo deseas */
+    min-width: 32px; /* Ajusta el ancho si es necesario */
+  }
+  
+  /* Estilo para las etiquetas en los ítems */
+  .address-label {
+    font-weight: bold;
+  }
+  
+  /* Estilo para el contenido de la tarjeta de dirección */
+  .address-content {
+    padding: 16px;
+  }
+  
+  /* Estilo para el texto en los ítems */
+  .address-text {
+    font-weight: normal;
+  }
+

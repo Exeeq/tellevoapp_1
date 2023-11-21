@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center centrado2">
+      {{ "INICIO" | translate }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-card-content class="ion-text-center">
+      {{ "ACTUAL" | translate }}
+    </ion-card-content>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.2588919326727!2d-70.58164592430286!3d-33.59858657333129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662d7037854df81%3A0x893f58a1479b8f82!2sDuoc%20UC%3A%20Sede%20Puente%20Alto!5e0!3m2!1ses!2scl!4v1693430346196!5m2!1ses!2scl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    <br><br>
+    <div class="ion-text-center">
+      <ion-button (click)="volver()">
+        {{ "VOLVERMENU" | translate }}
+      </ion-button>
+    </div>
+</ion-content>

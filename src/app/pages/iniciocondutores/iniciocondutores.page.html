@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center centrado2">{{ "INICIO" | translate }}</ion-title>
+    <ion-icon slot="end" name="information-circle-outline" size="large"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <img alt="Silhouette of mountains" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaK0nivDnxOMONI_6gqswbs-ohov-XkHuXAQ&usqp=CAU" />
+    <ion-card-header>
+      <ion-card-title class="centrado2  ">{{ "TELLEVOAPP" | translate }}</ion-card-title>
+      <ion-card-subtitle class="ion-text-center">{{ "LAMEJORFORMA" | translate }}</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content class="ion-text-center">
+      {{ "DEDICADA" | translate }}
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card>
+    <ion-card-header class="ion-text-center">
+      <ion-card-title class="centrado2">{{ "CREAR" | translate }}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content class="ion-text-center">
+      <div class="ion-text-center">
+        <ion-button (click)="irCrearViaje()" size="large" color="warning" class="centrado2">{{ "CREARVIAJE" | translate }}<ion-icon name="car-sport-outline"></ion-icon></ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="centrado2  ">{{ "TUTORIAL" | translate }}</ion-card-title>
+    </ion-card-header>
+    <br>
+    <img alt="Silhouette of mountains" src="../../../assets/iconosidebar.PNG" />
+    <ion-card-content class="ion-text-center">
+      {{ "IZQUIERDA" | translate }}
+      <br><br>
+      <img alt="Silhouette of mountains" src="../../../assets/sidebar.PNG" />
+      <br>
+      {{ "NAVEGACION" | translate }}
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+

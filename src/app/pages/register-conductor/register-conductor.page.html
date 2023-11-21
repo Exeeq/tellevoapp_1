@@ -1,0 +1,35 @@
+<ion-header class="header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center centrado2 ion-align-items-center ion-justify-content-center">
+      {{ "DETALLE" | translate }}
+    </ion-title>
+    <ion-icon slot="end" name="information-circle-outline" size="large"></ion-icon>
+  </ion-toolbar>
+
+</ion-header>
+
+<br><br><br><br>
+
+<ion-content [fullscreen]="true" class="centro">
+  <ion-card class="ion-padding ion-text-center ion-align-items-center ion-justify-content-center">
+    <img alt="Silhouette of mountains" src="../../../assets/logoduoc.png" />
+    <ion-card-header>
+      <ion-card-title class="centrado2">{{ "REGISTROCONDUC" | translate }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-input #licencia type="text" label="Licencia" labelPlacement="stacked" placeholder="Ingrese foto licencia"></ion-input>
+      </ion-item>
+    </ion-card-content>
+    
+    <br>
+    <div class="">
+      <ion-button size="large" color="warning" class="centrado2" (click)="registrarConductor(licencia)">{{ "SERCONDUCTOR" | translate }}</ion-button>
+    </div>
+
+  </ion-card>
+</ion-content>

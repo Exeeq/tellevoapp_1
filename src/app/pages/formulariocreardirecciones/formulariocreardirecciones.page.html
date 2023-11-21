@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center centrado2">
+      {{ "FORMULARIO" | translate }}
+    </ion-title>
+    <ion-icon slot="end" name="information-circle-outline" size="large"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Formulario para agregar una dirección -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">{{ "CREACIONDIRECCION" | translate }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">{{ "NOMBRE" | translate }}</ion-label>
+        <ion-input #nombre type="text" placeholder="Ej: Calle casa"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">{{ "COMUNA" | translate }}</ion-label>
+        <ion-input #comuna type="text" placeholder="Ej: La Cisterna"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">{{ "CALLE" | translate }}</ion-label>
+        <ion-input #calle type="text" placeholder="Ej: Ernesto Alvear"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">{{ "DETALLE" | translate }}</ion-label>
+        <ion-input #detalle type="text" placeholder="Ej: Puedes entrar y salir facil del pasaje"></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-button expand="full" (click)="addDireccion(nombre,comuna,calle,detalle)">{{ "GUARDARDIRECCION" | translate }}</ion-button>
+</ion-content>

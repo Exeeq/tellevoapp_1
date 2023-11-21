@@ -1,0 +1,31 @@
+/* Añade estos estilos a tu archivo de estilos global o local */
+
+
+
+.qr-card {
+  max-width: 300px;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Añade este estilo para centrar el contenido del card */
+}
+
+.qr-container {
+  margin-top: 20px;
+}
+
+.centered-image {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 5px;
+}
+
+.mensaje {
+  font-size: 16px;
+  margin-top: 20px;
+  font-weight: bold; 
+}
+
+.mensaje-texto {
+  margin: 0;
+}

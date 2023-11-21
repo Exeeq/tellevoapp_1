@@ -1,0 +1,55 @@
+<ion-header class="header">
+  <ion-toolbar>
+    <ion-title class="ion-text-center centrado2">
+      DETALLE
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="redirectUpdate()" fill="clear" color="primary" *ngIf="user?.esConductor">
+        <ion-icon name="sync-outline"></ion-icon>
+      </ion-button>
+      <ion-button (click)="deleteViaje()" fill="clear" color="danger" *ngIf="user?.esConductor">
+        <ion-icon name="trash-bin-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+
+  <ion-card class="card">
+
+    <ion-img class="image" [src]="viajes.imagen"></ion-img>
+
+    <ion-card-header>
+      <ion-card-title>{{viajes.nombre}}</ion-card-title>
+      <ion-card-subtitle>{{viajes.vehiculo}}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        Lugar: {{viajes.lugar}}
+      </ion-item>
+      <ion-item>
+        Patente: {{viajes.patente}}
+      </ion-item>
+      <ion-item>
+        Capacidad: {{viajes.capacidad}}
+      </ion-item>
+      <ion-item>
+        Fecha: {{viajes.fecha}}
+      </ion-item>
+      <ion-item>
+        Hora: {{viajes.hora}}
+      </ion-item>
+
+      
+    </ion-card-content>
+
+
+    <ion-card-content class="ion-text-center">
+      <ion-button size="small" color="primary" (click)="tomarViaje()">TOMAR VIAJE</ion-button>
+      <ion-button size="small" color="warning" (click)="noTomar()">VOLVER</ion-button>
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>

@@ -1,0 +1,46 @@
+<ion-header class="colorpersonalizado">
+  <ion-toolbar>
+    <ion-title class="ion-text-center centrado2">
+      <ion-icon name="person-add-outline" class="icono"></ion-icon>{{ "REGISTROTELLEVO" | translate }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="fondo">
+  <ion-card class="ion-padding ion-text-center ion-align-items-center ion-justify-content-center card-registro">
+    <img alt="Logo de TellevoApp" src="../../../assets/logoduoc.png" class="logo" />
+    <ion-card-header>
+      <ion-card-title class="centrado2">{{ "REGISTROTELLEVO" | translate }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item class="input">
+        <ion-input #nombre type="text" label="Nombre Estudiante" labelPlacement="stacked" placeholder="Ingrese su nombre"></ion-input>
+      </ion-item>
+    </ion-card-content>
+
+    <ion-card-content>
+      <ion-item class="input">
+        <ion-input #email type="email" label="Correo Estudiante" labelPlacement="stacked" placeholder="Ingrese correo del Estudiante"></ion-input>
+      </ion-item>
+    </ion-card-content>
+
+    <ion-card-content>
+      <ion-item class="input">
+        <ion-input #edad type="string" label="Edad" labelPlacement="stacked" placeholder="Ingrese su edad"></ion-input>
+      </ion-item>
+    </ion-card-content>
+
+    <ion-card-content>
+      <ion-item class="input">
+        <ion-input #pass type="password" label="Contraseña" labelPlacement="stacked" placeholder="Ingrese contraseña"></ion-input>
+      </ion-item>
+    </ion-card-content>
+
+    <div class="botones">
+      <ion-button size="large" color="warning" class="centrado2" (click)="registrarUsuario(email.value, pass.value, nombre.value, edad.value)">{{ "REGISTRARSE" | translate }}</ion-button>
+
+    </div>
+
+  </ion-card>
+</ion-content>

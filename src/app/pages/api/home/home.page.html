@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center centrado2">
+      APIHOME
+    </ion-title>
+    <ion-icon slot="end" name="information-circle-outline" size="large"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+  <!-- REFRESCA LA PÁGINA -->
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <!-- LISTA LOS VIAJES DEL JSON (BD) -->
+  <ion-list>
+    <ion-item *ngFor="let aux of listaViajes" [routerLink]="['/apidatail', aux.id]">
+      <ion-avatar slot="start">
+        <ion-img [src]="aux.imagen"></ion-img> 
+      </ion-avatar>
+      <ion-label>{{ aux.nombre }}</ion-label>
+      <ion-reorder slot="end"></ion-reorder>
+    </ion-item>
+  </ion-list>
+
+  <!-- ÍCONO QUE REDIRIGE AL FORMULARIO DE CREACIÓN DE UN VIAJE -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="user?.esConductor">
+    <ion-fab-button (click)="redirectCrearViaje()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+  
+  
+
+</ion-content>

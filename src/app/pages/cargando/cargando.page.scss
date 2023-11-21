@@ -1,0 +1,89 @@
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Centra verticalmente en la pantalla */
+  }
+  
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(0, 0, 0, 0.3);
+    border-top: 4px solid #007bff; /* Cambia este color al que desees */
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
+  .logo {
+    max-width: 80%; /* Ajusta el tamaño del logo según tus necesidades */
+    margin-bottom: 20px; /* Espacio entre el logo y el preloader */
+  }
+  
+  /* Estilos del preloader (se mantienen igual) */
+  .loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(0, 0, 0, 0.3);
+    border-top: 4px solid #007bff;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+/* Estilos para el logo grande al principio */
+.logo-grande {
+    max-width: 80%; /* Tamaño máximo del logo */
+    margin-bottom: 20px; /* Espacio entre el logo grande y el preloader */
+    animation: logoGrande 3s ease-out forwards; /* Animación de agrandar */
+  }
+  
+  /* Animación para agrandar el logo */
+  @keyframes logoGrande {
+    0% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(0.3); /* Escala el logo al 50% */
+      opacity: 1; /* Hace el logo invisible */
+    }
+  }
+  
+  /* Estilos para el preloader */
+  .loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(0, 0, 0, 0.3);
+    border-top: 4px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  /* Clase para ocultar el preloader */
+  .oculto {
+    display: none;
+  }

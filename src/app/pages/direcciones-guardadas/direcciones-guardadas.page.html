@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center centrado2">
+      {{"DIRECCIONES" | translate}}
+    </ion-title>
+    <ion-buttons slot="end" name="trash-outline"></ion-buttons>
+    <ion-icon slot="end" name="information-circle-outline" size="large"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let aux of listaDirecciones" [routerLink]="['/direcciones-guardadas', aux.id]">
+      <ion-label>{{ aux.nombre }}</ion-label>
+    </ion-item>    
+    
+  </ion-list>
+  
+  <!-- Coloca el botón en la parte inferior de la pantalla usando ion-fab -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addDireccion()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,64 @@
+<ion-header class="colorpersonalizado">
+  <ion-toolbar>
+    <ion-title>
+      <ion-icon name="log-in-outline" class="icono"></ion-icon>{{ "INICIODESESION" | translate }}
+    </ion-title>
+
+    <!-- <ion-buttons slot="end">
+      <ion-button fill="clear" color="primary" (click)="cargarUsers()">
+        <ion-icon name="arrow-up-circle-outline"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" color="danger" (click)="eliminarUsers()">
+        <ion-icon name="trash-bin-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="fondo">
+  <form>
+    <ion-card class="ion-padding ion-text-center ion-align-items-center ion-justify-content-center card-login">
+      <img alt="Logo de TellevoApp" src="../../../assets/logoduoc.png" class="logo" />
+      <ion-card-header>
+        <ion-card-title class="centrado2">{{ "TITULO APP" | translate }}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content class="formulario">
+        <ion-item class="input">
+          <ion-input
+            #email
+            type="text"
+            label="EMAIL"
+            labelPlacement="stacked"
+            placeholder="Ingrese su email"
+            required
+          ></ion-input>
+        </ion-item>
+
+        <ion-item class="input">
+          <ion-input
+            #pass
+            type="password"
+            label="CONTRASEÑA"
+            labelPlacement="stacked"
+            placeholder="Ingrese contraseña"
+            required
+          ></ion-input>
+        </ion-item>
+        <ion-item class="input">
+          <ion-label>{{ "RECORDAR" | translate }}</ion-label>
+          <ion-checkbox [(ngModel)]="rememberMe" color="primary" name="rememberMe"></ion-checkbox>
+        </ion-item>
+      </ion-card-content>
+
+      <div class="botones">
+        <ion-button (click)="login(email.value, pass.value)" type="submit" color="warning" class="centrado2">
+          {{ "INGRESAR" | translate }}
+        </ion-button>
+        <ion-button (click)="registrarse()" type="submit" color="warning" class="centrado2">
+          {{ "REGISTRARSE" | translate }}
+        </ion-button>
+      </div>
+    </ion-card>
+  </form>
+</ion-content>
