@@ -1,20 +1,29 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>musicalista</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center centrado2">
+    </ion-title>
+    <ion-icon slot="end" name="information-circle-outline" size="large"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-searchbar [(ngModel)]="searchQuery" (ionChange)="searchSongs()"></ion-searchbar>
+  <ion-searchbar [(ngModel)]="searchQuery" (ionChange)="onSearchChange()"></ion-searchbar>
 
-  <ion-button *ngFor="let song of songs" (click)="selectSong(song)">
-    {{ song.name }} - {{ song.artist }}
-  </ion-button>
+  <div *ngFor="let song of availableSongs">
+    <ion-button (click)="selectSong(song)">
+      {{ song.name }} - {{ song.artist }}
+    </ion-button>
+  </div>
   
-  <div *ngIf="selectedSong">
-    <h2>{{ selectedSong.name }}</h2>
-    <p>{{ selectedSong.artist }}</p>
-    <!-- Otros detalles de la canción -->
+  <div *ngIf="selectedSongs.length > 0">
+    <h2>Lista de canciones seleccionadas:</h2>
+    <ion-list>
+      <ion-item *ngFor="let selected of selectedSongs">
+        {{ selected.name }} - {{ selected.artist }}
+      </ion-item>
+    </ion-list>
   </div>
 </ion-content>
-

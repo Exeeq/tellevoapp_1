@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MapaService } from 'src/app/services/mapa.service';
 
+
 @Component({
   selector: 'app-mapa',
   templateUrl: './mapa.page.html',

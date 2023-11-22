@@ -8,6 +8,7 @@ import Swal from 'sweetalert2';
 import { NgForm } from '@angular/forms';
 import { UsuarioActualService } from 'src/app/services/usuario-actual.service';
 
+
 @Component({
   selector: 'app-formulariocrearviaje',
   templateUrl: './formulariocrearviaje.page.html',

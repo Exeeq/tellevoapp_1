@@ -10,21 +10,30 @@ export class MusicalistaPage {
 
   constructor(private musicaService: MusicaService) { }
 
-  songs: any[] = [];
+  availableSongs: any[] = [];
+  selectedSongs: any[] = [];
   searchQuery: string = '';
-  selectedSong: any = null;
+
+  onSearchChange() {
+    if (!this.searchQuery) {
+      this.availableSongs = [];
+      this.selectedSongs = [];
+    } else {
+      this.searchSongs();
+    }
+  }
 
   searchSongs() {
     this.musicaService.searchSongs(this.searchQuery).subscribe((data: any) => {
-      this.songs = data.results.trackmatches.track;
-      console.log('Songs:', this.songs);
+      this.availableSongs = data.results.trackmatches.track;
+      console.log('Available Songs:', this.availableSongs);
     }, error => {
       console.error('Error fetching songs:', error);
     });
   }
 
   selectSong(song: any) {
-    this.selectedSong = song;
-    this.songs = this.songs.filter(s => s !== song);
+    this.selectedSongs.push(song);
+    this.availableSongs = this.availableSongs.filter(s => s !== song);
   }
 }

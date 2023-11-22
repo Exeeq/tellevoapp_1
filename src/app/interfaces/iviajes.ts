@@ -10,4 +10,6 @@ export interface IViajes {
     lugardestino: string,
     fecha: string;
     hora: string;
+    coordinatesEspera?: any; 
+    coordinatesDestino?: any;
 }

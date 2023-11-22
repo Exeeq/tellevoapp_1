@@ -15,6 +15,7 @@ export class MapaService {
   constructor(private http: HttpClient) {}
 
   createMap(elementId: string, center: [number, number], zoom: number): void {
+    this.clearMap();  // Limpia el mapa antes de crear uno nuevo
     this.map = L.map(elementId).setView(center, zoom);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap contributors',
@@ -54,5 +55,11 @@ export class MapaService {
     }
   }
 
-  
+  clearMap(): void {
+    if (this.map) {
+      this.map.eachLayer((layer) => {
+        layer.remove();
+      });
+    }
+  }
 }
