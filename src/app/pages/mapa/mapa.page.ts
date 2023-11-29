@@ -12,32 +12,35 @@ export class MapaPage implements OnInit {
   constructor(private mapaService: MapaService, private route: ActivatedRoute) {}
 
   ngOnInit() {
-    // Proceso de obtención de coordenadas desde ubicaciones escritas
     this.route.paramMap.subscribe((params) => {
       const lugarEspera = params.get('lugarEspera');
       const lugarDestino = params.get('lugarDestino');
 
       if (lugarEspera !== null && lugarDestino !== null) {
-        // Utilizar un servicio de geocodificación para obtener coordenadas del lugar de espera
         this.mapaService.getCoordinatesFromLocation(lugarEspera).subscribe(
           (coordinatesEspera) => {
             if (coordinatesEspera) {
-              // Crear el mapa con el lugar de espera
               const zoom = 16;
               this.mapaService.createMap('map-container', coordinatesEspera, zoom);
-
-              // Agregar un marcador en el lugar de espera
               this.mapaService.addMarker(coordinatesEspera);
 
-              // Utilizar un servicio de geocodificación para obtener coordenadas del lugar de destino
               this.mapaService.getCoordinatesFromLocation(lugarDestino).subscribe(
                 (coordinatesDestino) => {
                   if (coordinatesDestino) {
-                    // Agregar un marcador en el lugar de destino
                     this.mapaService.addMarker(coordinatesDestino);
 
-                    // Crear una polilínea que conecta el lugar de espera con el lugar de destino
-                    this.mapaService.addPolyline([coordinatesEspera, coordinatesDestino]);
+                    this.mapaService.getRoute(`${coordinatesEspera[1]},${coordinatesEspera[0]}`, `${coordinatesDestino[1]},${coordinatesDestino[0]}`).subscribe(
+                      (routeCoordinates) => {
+                        if (routeCoordinates.length > 0) {
+                          this.mapaService.addPolyline(routeCoordinates);
+                        } else {
+                          console.error('No se pudo obtener la ruta.');
+                        }
+                      },
+                      (error) => {
+                        console.error('Error al obtener la ruta:', error);
+                      }
+                    );
                   } else {
                     console.error('No se pudieron obtener las coordenadas para el lugar de destino.');
                   }
