@@ -14,11 +14,11 @@ import { UsuarioActualService } from './services/usuario-actual.service';
 
 export class AppComponent {
   public appPages = [
-    { titlekey: 'INICIO', url: 'inicio', icon: 'homez' },
-    { titlekey: 'VIAJES DISPONIBLES', url: 'viajes', icon: 'paper-plane' },
+    { title: 'INICIO', url: 'inicio', icon: 'homez' },
+    { title: 'VIAJES DISPONIBLES', url: 'viajes', icon: 'paper-plane' },
     { title: 'API TELLEVOAP', url: 'apihome', icon: 'map' },
-    { titlekey: 'DIRECIONES', url: 'direcciones-guardadas', icon: 'compass' },
-    { titlekey: 'SER CONDUCTOR', url: 'register-conductor', icon: 'car-outline' },
+    { title: 'DIRECIONES', url: 'direcciones-guardadas', icon: 'compass' },
+    { title: 'SER CONDUCTOR', url: 'register-conductor', icon: 'car-outline' },
   ];
 
   public appapi = [
