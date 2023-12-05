@@ -4,7 +4,7 @@
       <ion-back-button defaultHref="/viajes"></ion-back-button>
     </ion-buttons>
     <ion-title class="ion-text-center centrado2">
-      ¡COMPLETADO!
+      {{ "COMPLETADO" | translate }}
     </ion-title>
     <ion-icon slot="end" name="information-circle-outline" size="large"></ion-icon>
   </ion-toolbar>
@@ -14,7 +14,7 @@
 
   <ion-card class="qr-card">
     <ion-card-header>
-      <ion-card-title class="centrado2 ion-text-center">¡VIAJE TOMADO CON ÉXITO!</ion-card-title>
+      <ion-card-title class="centrado2 ion-text-center">{{ "VIAJETOMADO" | translate }}</ion-card-title>
     </ion-card-header>
 
     <div class="qr-container ion-text-center">
@@ -23,12 +23,12 @@
     
     <ion-card-content class="ion-text-center mensaje">
       <p class="mensaje-texto">
-        GUARDA ESTE CÓDIGO. MUESTRA EL QR AL CONDUCTOR PARA VALIDAR EL VIAJE.
+        {{ "GUARDA" | translate }}
       </p>
     </ion-card-content>
 
     <ion-button class="ion-text-center" (click)="irMapa()">
-      IR AL MAPA
+      {{ "IRALMAPA" | translate }}
     </ion-button>
   </ion-card>
   

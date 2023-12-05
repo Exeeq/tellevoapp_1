@@ -113,5 +113,14 @@
     "FECHA":"날짜",
     "HORA":"시간",
     "ACTUAL":"이 지도 섹션에서 현재 위치와 근처의 거리를 확인할 수 있습니다",
-    "VOLVERMENU":"메인 메뉴로 돌아가기"
+    "VOLVERMENU":"메인 메뉴로 돌아가기",
+    "COMPLETADO":"완료!",
+    "VIAJETOMADO":"성공적인 여행이 이루어졌습니다!",
+    "GUARDA":"이 코드를 저장하세요. 여행을 확인하려면 운전자에게 QR을 보여주세요.",
+    "IRALMAPA":"지도로 이동",
+    "INICIOSIDEBAR":"INICIO",
+    "VIAJESSIDEBAR":"VIAJES DISPONIBLES",
+    "APISIDEBAR":"API TELLEVOAPP",
+    "DIRECCIONSIDEBAR":"DIRECCIONES",
+    "CONDUCTORSIDEBAR":"SER CONDUCTOR"
 }
