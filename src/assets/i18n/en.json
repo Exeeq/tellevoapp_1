@@ -123,5 +123,8 @@
     "VIAJESSIDEBAR":"AVAILABLE TRIPS",
     "APISIDEBAR":"API TELLEVOAPP",
     "DIRECCIONSIDEBAR":"DIRECTIONS",
-    "CONDUCTORSIDEBAR":"BE CONDUCTOR"
+    "CONDUCTORSIDEBAR":"BE CONDUCTOR",
+    "MAPA": "MAP",
+    "BIENVENIDOMAPA": "Welcome to the Map!",
+    "DESCMAPA": "Here you can see the route to the destination. Explore and enjoy the journey."
 }

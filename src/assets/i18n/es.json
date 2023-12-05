@@ -123,6 +123,9 @@
     "VIAJESSIDEBAR":"VIAJES DISPONIBLES",
     "APISIDEBAR":"API TELLEVOAPP",
     "DIRECCIONSIDEBAR":"DIRECCIONES",
-    "CONDUCTORSIDEBAR":"SER CONDUCTOR"
+    "CONDUCTORSIDEBAR":"SER CONDUCTOR",
+    "MAPA":"MAPA",
+    "BIENVENIDOMAPA":"¡Bienvenido al Mapa",
+    "DESCMAPA":"Aquí puedes ver la ruta al destino. Explora y disfruta del viaje."
 
 }
