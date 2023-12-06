@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'cl.tellevo.app',
+  appId: 'com.example.app',
   appName: 'tellevoapp',
   webDir: 'www',
   server: {
