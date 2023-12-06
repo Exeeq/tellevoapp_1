@@ -5,13 +5,13 @@
     <ion-menu contentId="main-content" type="overlay" menuId="menu" *ngIf="mostrarMenu()">
       <ion-content>
         <ion-list id="inbox-list">
-          <ion-list-header>{{ "Bienvenido" | translate }}<ion-icon name="car-sport-outline"></ion-icon></ion-list-header>
-          <ion-note>{{ "CONSEGURIDAD" | translate }}</ion-note>
+          <ion-list-header>{{ 'Bienvenido' | translate }}<ion-icon name="car-sport-outline"></ion-icon></ion-list-header>
+          <ion-note>{{ 'VIAJA CON SEGURIDAD' | translate }}</ion-note>
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
               <ion-icon aria-hidden="true" slot="start"></ion-icon>
-              <ion-label>{{ p.title }}</ion-label>
+              <ion-label>{{ p.title | translate }}</ion-label>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>
@@ -22,13 +22,13 @@
     <ion-menu contentId="main-content" type="overlay" *ngIf="mostrarMenuapi()">
       <ion-content>
         <ion-list id="inbox-list">
-          <ion-list-header>{{ "Bienvenido" | translate }}<ion-icon name="car-sport-outline"></ion-icon></ion-list-header>
-          <ion-note>{{ "CONSEGURIDADAPI" | translate }}</ion-note>
+          <ion-list-header>{{ 'Bienvenido' | translate }}<ion-icon name="car-sport-outline"></ion-icon></ion-list-header>
+          <ion-note>{{ 'VIAJA CON SEGURIDAD API' | translate }}</ion-note>
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appapi">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
               <ion-icon aria-hidden="true" slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
-              <ion-label>{{ p.title }}</ion-label>
+              <ion-label>{{ p.title | translate }}</ion-label>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>

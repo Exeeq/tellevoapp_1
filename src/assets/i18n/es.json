@@ -126,6 +126,16 @@
     "CONDUCTORSIDEBAR":"SER CONDUCTOR",
     "MAPA":"MAPA",
     "BIENVENIDOMAPA":"¡Bienvenido al Mapa",
-    "DESCMAPA":"Aquí puedes ver la ruta al destino. Explora y disfruta del viaje."
+    "DESCMAPA":"Aquí puedes ver la ruta al destino. Explora y disfruta del viaje.",
+    "VIAJA CON SEGURIDAD": "VIAJA CON SEGURIDAD",
+    "VIAJES DISPONIBLES": "VIAJES DISPONIBLES",
+    "API TELLEVOAP": "API TELLEVOAPP",
+    "DIRECIONES": "DIRECCIONES",
+    "SER CONDUCTOR": "SER CONDUCTOR",
+    "EMAIL": "CORREO ELECTRÓNICO",
+    "CONTRASEÑA": "CONTRASEÑA",
+    "INGRESE SU EMAIL": "INGRESE SU CORREO ELECTRÓNICO",
+    "INGRESE CONTRASEÑA": "INGRESE CONTRASEÑA",
+    "RECUPERAR CONTRASEÑA": "RECUPERAR CONTRASEÑA"
 
 }

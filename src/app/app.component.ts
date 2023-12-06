@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
-import { LoginserviceService } from './services/loginservice.service';
 import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
-import { TranslateModule } from '@ngx-translate/core';
 import { UsuarioActualService } from './services/usuario-actual.service';
 
 @Component({
@@ -11,12 +9,10 @@ import { UsuarioActualService } from './services/usuario-actual.service';
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
-
 export class AppComponent {
   public appPages = [
-    { title: 'INICIO', url: 'inicio', icon: 'homez' },
+    { title: 'INICIO', url: 'inicio', icon: 'home' },
     { title: 'VIAJES DISPONIBLES', url: 'viajes', icon: 'paper-plane' },
-    { title: 'API TELLEVOAP', url: 'apihome', icon: 'map' },
     { title: 'DIRECIONES', url: 'direcciones-guardadas', icon: 'compass' },
     { title: 'SER CONDUCTOR', url: 'register-conductor', icon: 'car-outline' },
   ];
@@ -27,36 +23,42 @@ export class AppComponent {
     { title: 'API DIGIMON', url: 'mensajes', icon: 'mail' },
   ];
 
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-
   user: any;
-  constructor(private router: Router, private menuController: MenuController,
-              private transService: TranslateService,
-              private usuarioActual: UsuarioActualService) {
-                this.transService.setDefaultLang('es');
-                this.transService.addLangs(['cor','en']);
-              }
+
+  constructor(
+    private router: Router,
+    private menuController: MenuController,
+    private transService: TranslateService,
+    private usuarioActual: UsuarioActualService
+  ) {
+    this.transService.setDefaultLang('es');
+    this.transService.addLangs(['cor', 'en']);
   
+    const browserLang = this.transService.getBrowserLang();
+  
+    if (browserLang) {
+      this.transService.use(browserLang.match(/cor|en/) ? browserLang : 'es');
+    } else {
+      this.transService.use('es');
+    }
+  }
+  
+
   ngOnInit() {
     this.user = this.usuarioActual.getCurrentUser();
   }
-  
+
   mostrarMenu() {
-    console.log(this.router.url);
-    return this.router.url !== '/login' && this.router.url !== '/terminoscondiciones' && this.router.url !== '/cargando' && this.router.url !== '/registrarse';
+    return (
+      !this.router.url.includes('/login') &&
+      !this.router.url.includes('/terminoscondiciones') &&
+      !this.router.url.includes('/cargando') &&
+      !this.router.url.includes('/registrarse')
+    );
   }
 
   mostrarMenuapi() {
-    const aux = [
-      '/apihome',
-      '/apiadd',
-      '/apiupdate',
-      '/apidatail',
-    ];
-    return aux.includes(this.router.url); 
+    const aux = ['/apihome', '/apiadd', '/apiupdate', '/apidatail'];
+    return aux.includes(this.router.url);
   }
-
-
 }
-
-

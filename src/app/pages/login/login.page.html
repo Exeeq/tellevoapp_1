@@ -3,15 +3,6 @@
     <ion-title>
       <ion-icon name="log-in-outline" class="icono"></ion-icon>{{ "INICIODESESION" | translate }}
     </ion-title>
-
-    <!-- <ion-buttons slot="end">
-      <ion-button fill="clear" color="primary" (click)="cargarUsers()">
-        <ion-icon name="arrow-up-circle-outline"></ion-icon>
-      </ion-button>
-      <ion-button fill="clear" color="danger" (click)="eliminarUsers()">
-        <ion-icon name="trash-bin-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons> -->
   </ion-toolbar>
 </ion-header>
 
@@ -25,31 +16,38 @@
 
       <ion-card-content class="formulario">
         <ion-item class="input">
+          <ion-label>{{ "EMAIL" | translate }}</ion-label>
           <ion-input
             #email
             type="text"
-            label="EMAIL"
             labelPlacement="stacked"
-            placeholder="Ingrese su email"
+            placeholder="{{ 'INGRESE SU EMAIL' | translate }}"
             required
           ></ion-input>
         </ion-item>
-
+      
         <ion-item class="input">
+          <ion-label>{{ "CONTRASEÑA" | translate }}</ion-label>
           <ion-input
             #pass
             type="password"
-            label="CONTRASEÑA"
             labelPlacement="stacked"
-            placeholder="Ingrese contraseña"
+            placeholder="{{ 'INGRESE CONTRASEÑA' | translate }}"
             required
           ></ion-input>
         </ion-item>
+      
         <ion-item class="input">
           <ion-label>{{ "RECORDAR" | translate }}</ion-label>
           <ion-checkbox [(ngModel)]="rememberMe" color="primary" name="rememberMe"></ion-checkbox>
         </ion-item>
+
+        <ion-item class="link" (click)="recuperarContrasena()">
+          <ion-label>{{ 'RECUPERAR CONTRASENA' | translate }}</ion-label>
+        </ion-item>
       </ion-card-content>
+      
+      
 
       <div class="botones">
         <ion-button (click)="login(email.value, pass.value)" type="submit" color="warning" class="centrado2">

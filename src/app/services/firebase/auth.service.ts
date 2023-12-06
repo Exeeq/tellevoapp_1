@@ -14,7 +14,6 @@ interface UserData {
   esConductor: boolean;
   nombre: string;
   edad: number;
-  // ... otras propiedades según tu estructura
 }
 
 
@@ -50,6 +49,7 @@ export class AuthService {
 
     await alert.present();
   }
+  
 
   async login(email: string, pass: string, rememberMe: boolean) {
     try {
@@ -94,6 +94,16 @@ export class AuthService {
       }
     }
   }
+
+  async resetearContrasena(email: string) {
+    try {
+      await this.auth.sendPasswordResetEmail(email);
+      this.mensajeToast('Se ha enviado un correo electrónico para restablecer la contraseña.');
+    } catch (error) {
+      console.error('Error al enviar correo electrónico de recuperación de contraseña:', error);
+      this.mostrarMensajeError('Error al enviar correo electrónico de recuperación de contraseña.');
+    }
+}
   
 
   async logup(email: any, pass: any, nombre: any, edad: any) {
@@ -162,6 +172,10 @@ export class AuthService {
       console.error('Error al actualizar el campo esConductor:', error);
       // Puedes manejar el error según tus necesidades
     }
+  }
+
+  getUserByEmail(email: string): Promise<any> {
+    return this.firestore.collection('usuarios', ref => ref.where('email', '==', email)).get().toPromise();
   }
   
   
