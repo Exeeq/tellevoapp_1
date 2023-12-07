@@ -130,6 +130,17 @@
     "CONTRASEÑA": "암호",
     "INGRESE SU EMAIL": "이메일을 입력하세요",
     "INGRESE CONTRASEÑA": "암호를 입력하세요",
-    "RECUPERAR CONTRASEÑA": "비밀번호 찾기"
-
+    "RECUPERAR CONTRASENA": "비밀번호 찾기",
+    "Se ha enviado un correo electrónico para restablecer la contraseña.": "비밀번호 재설정 이메일이 발송되었습니다.",
+    "Cancelar": "취소",
+    "Recuperar Contraseña": "비밀번호 찾기",
+    "Enviar": "보내다",
+    "Correo Electrónico": "이메일",
+    "Correo o contraseña inválida": "유효하지 않은 이메일 또는 비밀번호",
+    "Correo o contraseña inválida, si el error sigue contacte al soporte.": "유효하지 않은 이메일이나 비밀번호입니다. 오류가 지속되면 지원팀에 문의하십시오.",
+    "Error al enviar correo electrónico de recuperación de contraseña.": "비밀번호 복구 이메일 전송 중 오류가 발생했습니다.",
+    "No hay una cuenta asociada a este correo electrónico.": "이 이메일과 연결된 계정이 없습니다.",
+    "musicalista": "음악 목록 보기",
+    "Estado del tiempo en": "날씨 상태",
+    "Recomendaciones": "추천 사항:"
 }

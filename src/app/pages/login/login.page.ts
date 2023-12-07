@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { ToastController, AlertController } from '@ionic/angular';
 import { UsuarioActualService } from 'src/app/services/usuario-actual.service';
 import { AuthService } from 'src/app/services/firebase/auth.service';
+import { TranslateService } from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-login',
@@ -18,7 +20,8 @@ export class LoginPage implements OnInit {
     private toastController: ToastController,
     private alertController: AlertController,
     private usuarioActualService: UsuarioActualService,
-    private authservice: AuthService
+    private authservice: AuthService,
+    private translateService: TranslateService,
   ) { }
 
   ngOnInit() {
@@ -42,7 +45,8 @@ export class LoginPage implements OnInit {
     toast.present();
   }
 
-  private async mostrarMensaje(mensaje: string) {
+  private async mostrarMensaje(mensajeKey: string) {
+    const mensaje = await this.translateService.get(mensajeKey).toPromise();
     const toast = await this.toastController.create({
       message: mensaje,
       duration: 2000,
@@ -61,41 +65,38 @@ export class LoginPage implements OnInit {
 
   async recuperarContrasena() {
     const alert = await this.alertController.create({
-        header: 'Recuperar Contraseña',
-        inputs: [
-            {
-                name: 'email',
-                type: 'text',
-                placeholder: 'Correo Electrónico',
-            },
-        ],
-        buttons: [
-            {
-                text: 'Cancelar',
-                role: 'cancel',
-            },
-            {
-                text: 'Enviar',
-                handler: async (data) => {
-                    try {
-                        // Verificar si el correo existe en Firebase
-                        const user = await this.authservice.getUserByEmail(data.email);
-                        
-                        if (user && user.docs.length > 0) {
-                            // El correo existe, enviar el correo de restablecimiento de contraseña
-                            await this.authservice.resetearContrasena(data.email);
-                            this.mostrarMensaje('Se ha enviado un correo electrónico para restablecer la contraseña.');
-                        } else {
-                            // El correo no existe, mostrar un mensaje indicando esto
-                            this.mostrarMensaje('No hay una cuenta asociada a este correo electrónico.');
-                        }
-                    } catch (error) {
-                        console.error('Error al enviar correo electrónico de recuperación de contraseña:', error);
-                        this.mostrarMensaje('Error al enviar correo electrónico de recuperación de contraseña.');
-                    }
-                },
-            },
-        ],
+      header: await this.translateService.get('Recuperar Contraseña').toPromise(),
+      inputs: [
+        {
+          name: 'email',
+          type: 'text',
+          placeholder: await this.translateService.get('Correo Electrónico').toPromise(),
+        },
+      ],
+      buttons: [
+        {
+          text: await this.translateService.get('Cancelar').toPromise(),
+          role: 'cancel',
+        },
+        {
+          text: await this.translateService.get('Enviar').toPromise(),
+          handler: async (data) => {
+            try {
+              const user = await this.authservice.getUserByEmail(data.email);
+  
+              if (user && user.docs.length > 0) {
+                await this.authservice.resetearContrasena(data.email);
+                this.mostrarMensaje(await this.translateService.get('Se ha enviado un correo electrónico para restablecer la contraseña.').toPromise());
+              } else {
+                this.mostrarMensaje(await this.translateService.get('No hay una cuenta asociada a este correo electrónico.').toPromise());
+              }
+            } catch (error) {
+              console.error('Error al enviar correo electrónico de recuperación de contraseña:', error);
+              this.mostrarMensaje(await this.translateService.get('Error al enviar correo electrónico de recuperación de contraseña.').toPromise());
+            }
+          },
+        },
+      ],
     });
   
     await alert.present();

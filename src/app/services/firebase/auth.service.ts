@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 import { UsuarioActualService } from '../usuario-actual.service';
+import { TranslateService } from '@ngx-translate/core';
 
 
 
@@ -28,12 +29,14 @@ export class AuthService {
     private toastController: ToastController,
     private firestore: AngularFirestore,
     private alertController: AlertController,
-    private usuarioActualService: UsuarioActualService
+    private usuarioActualService: UsuarioActualService,
+    private translateService: TranslateService,
   ) { }
 
   async mensajeToast(mensaje: string) {
+    const translatedMessage = await this.translateService.get(mensaje).toPromise();
     const toast = await this.toastController.create({
-      message: mensaje,
+      message: translatedMessage,
       duration: 2000,
       position: 'bottom'
     });
@@ -41,9 +44,12 @@ export class AuthService {
   }
 
   async mostrarMensajeError(mensaje: string) {
+    const translatedHeader = await this.translateService.get('Error').toPromise();
+    const translatedMessage = await this.translateService.get(mensaje).toPromise();
+
     const alert = await this.alertController.create({
-      header: 'Error',
-      message: mensaje,
+      header: translatedHeader,
+      message: translatedMessage,
       buttons: ['OK']
     });
 
@@ -103,7 +109,7 @@ export class AuthService {
       console.error('Error al enviar correo electrónico de recuperación de contraseña:', error);
       this.mostrarMensajeError('Error al enviar correo electrónico de recuperación de contraseña.');
     }
-}
+  }
   
 
   async logup(email: any, pass: any, nombre: any, edad: any) {

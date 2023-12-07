@@ -135,5 +135,17 @@
     "CONTRASEÑA": "PASSWORD",
     "INGRESE SU EMAIL": "Enter your email",
     "INGRESE CONTRASEÑA": "Enter your password",
-    "RECUPERAR CONTRASEÑA": "RECOVER PASSWORD"
+    "RECUPERAR CONTRASENA": "RECOVER PASSWORD",
+    "Se ha enviado un correo electrónico para restablecer la contraseña.": "A password reset email has been sent.",
+    "Correo Electrónico": "Email",
+    "Cancelar": "Cancel",
+    "Recuperar Contraseña": "RECOVER PASSWORD",
+    "Enviar": "Send",
+    "Correo o contraseña inválida": "Invalid email or password",
+    "Correo o contraseña inválida, si el error sigue contacte al soporte.": "Invalid email or password, if the error persists, contact support.",
+    "Error al enviar correo electrónico de recuperación de contraseña.": "Error sending password recovery email.",
+    "No hay una cuenta asociada a este correo electrónico.": "There is no account associated with this email.",
+    "musicalista": "See music list",
+    "Estado del tiempo en": "Weather in",
+    "Recomendaciones": "Recommendations:"
 }

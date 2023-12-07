@@ -136,6 +136,17 @@
     "CONTRASEÑA": "CONTRASEÑA",
     "INGRESE SU EMAIL": "INGRESE SU CORREO ELECTRÓNICO",
     "INGRESE CONTRASEÑA": "INGRESE CONTRASEÑA",
-    "RECUPERAR CONTRASEÑA": "RECUPERAR CONTRASEÑA"
+    "RECUPERAR CONTRASENA": "RECUPERAR CONTRASEÑA",
+    "Se ha enviado un correo electrónico para restablecer la contraseña.": "Se ha enviado un correo electrónico para restablecer la contraseña.",
+    "Correo Electrónico": "Correo Electrónico",
+    "Recuperar Contraseña": "Recuperar Contraseña",
+    "Enviar": "Enviar",
+    "Correo o contraseña inválida": "Correo o contraseña inválida",
+    "Correo o contraseña inválida, si el error sigue contacte al soporte.": "Correo o contraseña inválida, si el error sigue contacte al soporte.",
+    "Error al enviar correo electrónico de recuperación de contraseña.": "Error al enviar correo electrónico de recuperación de contraseña.",
+    "No hay una cuenta asociada a este correo electrónico.": "No hay una cuenta asociada a este correo electrónico.",
+    "Recomendaciones": "Recomendaciones:",
+    "musicalista": "Ver lista de música",
+    "Estado del tiempo en": "Estado del tiempo en"
 
 }
